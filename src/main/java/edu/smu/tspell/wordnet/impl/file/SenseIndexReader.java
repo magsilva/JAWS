@@ -26,6 +26,7 @@ package edu.smu.tspell.wordnet.impl.file;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -90,7 +91,7 @@ public class SenseIndexReader
 	{
 		String dir = PropertyNames.databaseDirectory;
 		InputStream file = getClass().getResourceAsStream(dir + fileName);
-		LineIterator iterator = IOUtils.lineIterator(file, null);
+		LineIterator iterator = IOUtils.lineIterator(file, Charset.defaultCharset());
 		//  Loop through all lines in the file
 		while (iterator.hasNext())
 		{

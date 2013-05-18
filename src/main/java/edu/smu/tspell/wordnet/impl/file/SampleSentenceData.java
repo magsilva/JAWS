@@ -32,6 +32,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -211,7 +212,7 @@ public abstract class SampleSentenceData
 		Map keySentences = new HashMap();
 		//  Open the file and start reading it
 		InputStream file = getClass().getResourceAsStream(PropertyNames.databaseDirectory + fileName);
-		LineIterator iterator = IOUtils.lineIterator(file, null);
+		LineIterator iterator = IOUtils.lineIterator(file, Charset.defaultCharset());
 		//  Loop through all lines in the file
 		while (iterator.hasNext())
 		{

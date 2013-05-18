@@ -12,6 +12,7 @@ import static org.junit.Assert.fail;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -48,7 +49,7 @@ public class WordNetConcurrencyTest {
 			if (file == null) {
 				throw new IOException("Cannot open file: " + path);
 			}
-			LineIterator iterator = IOUtils.lineIterator(file, null);
+			LineIterator iterator = IOUtils.lineIterator(file, Charset.defaultCharset());
 			//  Loop through all lines in the file
 			while (iterator.hasNext())
 			{
